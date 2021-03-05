@@ -19,7 +19,8 @@ After creating the Kinesis Data Firehose configure the output using the instruct
 •	firehose – An output plugin written in Golang.
 
 The following example shows you how to use the kinesis_firehose plugin to send logs to Kinesis Data Firehose.
-Use the following contents to a file named aws-logging-firehose-configmap.yaml.
+Use the following contents to a file named https://github.com/Dametrain/eks-fargate-fluentbit/blob/main/aws-logging-firehose-configmap.yaml.
+
 
 Apply the manifest to your cluster.
 kubectl apply -f aws-logging-firehose-configmap.yaml
