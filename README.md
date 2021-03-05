@@ -17,11 +17,14 @@ After creating the Kinesis Data Firehose configure the output using the instruct
 1.	Send logs to Kinesis Data Firehose. You have two output options when using Kinesis Data Firehose:
 •	kinesis_firehose – An output plugin written in C.
 •	firehose – An output plugin written in Golang.
+
 The following example shows you how to use the kinesis_firehose plugin to send logs to Kinesis Data Firehose.
-iii.	Save the following contents to a file named aws-logging-firehose-configmap.yaml.
-xvi.	Apply the manifest to your cluster.
+Use the following contents to a file named aws-logging-firehose-configmap.yaml.
+
+Apply the manifest to your cluster.
 kubectl apply -f aws-logging-firehose-configmap.yaml
-xvii.	Download the Kinesis Data Firehose IAM policy to your computer. You can also view the policy on GitHub.
+
+Download the Kinesis Data Firehose IAM policy to your computer. You can also view the policy on GitHub.
 curl -o permissions.json https://raw.githubusercontent.com/aws-samples/amazon-eks-fluent-logging-examples/mainline/examples/fargate/kinesis-firehose/permissions.json
 2.	Create an IAM policy.
 aws iam create-policy --policy-name <eks-fargate-logging-policy> --policy-document file://permissions.json
