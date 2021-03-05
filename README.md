@@ -26,10 +26,14 @@ kubectl apply -f aws-logging-firehose-configmap.yaml
 
 Download the Kinesis Data Firehose IAM policy to your computer. You can also view the policy on GitHub.
 curl -o permissions.json https://raw.githubusercontent.com/aws-samples/amazon-eks-fluent-logging-examples/mainline/examples/fargate/kinesis-firehose/permissions.json
+
 2.	Create an IAM policy.
 aws iam create-policy --policy-name <eks-fargate-logging-policy> --policy-document file://permissions.json
+
 3.	Attach the IAM policy to the pod execution role specified for your Fargate profile. Replace <111122223333> with your account ID.
+
 4.	aws iam attach-role-policy \
+
 5.	  --policy-arn arn:aws:iam::<111122223333>:policy/<eks-fargate-logging-policy> \
   --role-name <your-pod-execution-role>
   
