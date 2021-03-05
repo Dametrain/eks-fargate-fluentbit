@@ -6,7 +6,7 @@ Instructions
 
 There is a fixed namespace called aws-observability that you can use to send logs to, this has a cluster wide effect, so you can send from any namespace in the cluster. This is great since you don’t have to create a sidecar for Fargate logging, some have called it a hide-car pattern. *Note* Today integrating with Datadog and Splunk is supported via Kinesis Firehose as documented below, native integration is being discuss, you can follow https://github.com/aws/containers-roadmap/issues/1242. 
 
-If you need to spin up a Fargate enabled EKS cluster, you can use the eks-fargate-existing-vpc.template. Make sure to change the region, VPC and Subnets to yours appropriately. 
+If you need to spin up a Fargate enabled EKS cluster, you can use the https://github.com/Dametrain/eks-fargate-fluentbit/blob/main/eks-fargate-existing-vpc.template. Make sure to change the region, VPC and Subnets to yours appropriately. 
 
 Currently the only supported outputs are es, firehose, kinesis_firehose, cloudwatch, cloudwatch_logs, and kinesis. Fargate validates against the following supported output, so you will get an error if it is different.
 
